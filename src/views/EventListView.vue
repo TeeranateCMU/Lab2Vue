@@ -7,7 +7,7 @@ import axios from 'axios'
 const events = ref<Event[]>(null)
 onMounted(() => {
   axios
-    .get('[your mock server url]')
+    .get('https://my-json-server.typicode.com/TeeranateCMU/Lab2Vue/events')
     .then((response) => {
       console.log(response.data)
     })
