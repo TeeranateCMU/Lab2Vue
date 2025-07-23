@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import type { Event } from '@/types'
 defineProps<{
   event: Event
-  }>()
+}>()
 // const event = ref({
 //   id: 5928101,
 //   category: 'animal welfare',

@@ -2,7 +2,7 @@
 import EventCard from '@/components/EventCard.vue'
 import type { Event } from '@/types'
 import EventDetailsCard from '@/components/EventCardDetail.vue'
-import { ref } from 'vue' 
+import { ref } from 'vue'
 const events = ref<Event[]>([
   {
     id: 5928101,
@@ -13,7 +13,7 @@ const events = ref<Event[]>([
     date: 'January 28, 2022',
     time: '12:00',
     petsAllowed: true,
-    organizer: 'Kat Laydee'
+    organizer: 'Kat Laydee',
   },
   {
     id: 4582797,
@@ -24,7 +24,7 @@ const events = ref<Event[]>([
     date: 'March 14, 2022',
     time: '10:00',
     petsAllowed: true,
-    organizer: 'Fern Pollin'
+    organizer: 'Fern Pollin',
   },
   {
     id: 8419988,
@@ -35,18 +35,19 @@ const events = ref<Event[]>([
     date: 'July 22, 2022',
     time: '11:00',
     petsAllowed: false,
-    organizer: 'Carey Wales'
-  }
+    organizer: 'Carey Wales',
+  },
 ])
 </script>
 
 <template>
   <h1>Events For Good</h1>
-<!-- new element -->
+  <!-- new element -->
   <div class="events">
     <div v-for="event in events" :key="event.id">
       <EventCard :event="event" />
-      <EventDetailsCard :event="event" /> </div>
+      <EventDetailsCard :event="event" />
+    </div>
   </div>
 </template>
 
