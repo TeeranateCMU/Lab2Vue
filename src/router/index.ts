@@ -11,25 +11,27 @@ const router = createRouter({
       path: '/',
       name: 'event-list-view',
       component: EventListView,
-      props: (route) => ({ page: parseInt(route.query.page?.toString() || '1') })
+      props: (route) => ({
+        page: parseInt(route.query.page?.toString() || '1'),
+        limit: parseInt(route.query.limit?.toString() || '2') 
+      })
     },
     {
       path: '/event/:id',
       name: 'event-detail-view',
       component: EventDetailView,
-      props: true,
+      props: true
     },
     {
       path: '/about',
       name: 'about',
-      component: AboutView,
+      component: AboutView
     },
     {
       path: '/students',
       name: 'student-list-view',
-      component: StudentListView,
-    },
-  ],
+      component: StudentListView
+    }
+  ]
 })
-
 export default router
