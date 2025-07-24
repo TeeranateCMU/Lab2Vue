@@ -1,23 +1,30 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import Event from '@/types/Event'
+import { ref, onMounted, defineProps } from 'vue'
+import type { Event } from '@/types'
 import EventService from '@/services/EventService'
-const event = ref<Event>(null)
-const id = ref<number>(5928101)
+
+const event = ref<Event | null>(null) // Good to explicitly allow null here
+const props = defineProps({
+  id: {
+    type: Number,
+    required: true,
+  },
+})
 onMounted(() => {
- EventService.getEvent(id.value)
- .then((response) => {
-    event.value = response.data
+  
+  EventService.getEvent(props.id) // This will now correctly pass a number
+    .then((response) => {
+      event.value = response.data
     })
     .catch((error) => {
-        console.error('There was an error!', error)
+      console.error('There was an error!', error)
     })
 })
-    </script>
-    <template>
-       <div v-if="event">
-            <h1>{{ event.title }}</h1>
-            <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
-            <p>{{ event.description }}</p>
-        </div>
-    </template>
+</script>
+<template> 
+    <div v-if="event">
+        <h1>{{ event.title }}</h1>
+        <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
+        <p>{{ event.description }}</p>
+    </div>
+</template>
