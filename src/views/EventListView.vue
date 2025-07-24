@@ -6,10 +6,10 @@ import { ref, onMounted } from 'vue'
 import EventService from '@/services/EventService'
 const events = ref<Event[]>(null)
 onMounted(() => {
- EventService.getEvents()
-     .then((response) => {
-       events.value = response.data
-     })
+  EventService.getEvents()
+    .then((response) => {
+      events.value = response.data
+    })
     .catch((error) => {
       console.error('There was an error!', error)
     })

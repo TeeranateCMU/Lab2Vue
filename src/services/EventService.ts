@@ -5,11 +5,11 @@ const apiClient = axios.create({
   withCredentials: false,
   headers: {
     Accept: 'application/json',
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 })
 export default {
- getEvents() {
+  getEvents() {
     return apiClient.get('/events')
-  }
+  },
 }

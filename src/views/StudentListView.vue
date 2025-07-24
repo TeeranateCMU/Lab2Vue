@@ -5,13 +5,13 @@ import { ref, onMounted } from 'vue'
 import StudentService from '@/services/StudentService'
 import type { Student } from '@/types'
 
-const students = ref<Student[] | null>(null) 
+const students = ref<Student[] | null>(null)
 
 onMounted(() => {
   StudentService.getStudents()
     .then((response) => {
-      students.value = response.data 
-      console.log('Fetched Students:', response.data) 
+      students.value = response.data
+      console.log('Fetched Students:', response.data)
     })
     .catch((error) => {
       console.error('There was an error fetching students!', error)
@@ -28,9 +28,7 @@ onMounted(() => {
         <p>GPA: {{ student.gpa }}</p>
       </div>
     </div>
-    <div v-else>
-      Loading student data...
-    </div>
+    <div v-else>Loading student data...</div>
   </div>
 </template>
 
@@ -48,10 +46,10 @@ onMounted(() => {
   cursor: pointer;
   border: 1px solid #39495c;
   margin-bottom: 18px;
-  border-radius: 8px; 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-  background-color: #fff; 
-  text-align: center; 
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
 }
 .student-card:hover {
   transform: translateY(-3px);
@@ -59,14 +57,14 @@ onMounted(() => {
 }
 
 h2 {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   color: #2c3e50;
   margin-bottom: 5px;
 }
 
 p {
-  font-size: 1.1rem; 
-  color: #42b983; 
+  font-size: 1.1rem;
+  color: #42b983;
   margin-top: 5px;
 }
 </style>
