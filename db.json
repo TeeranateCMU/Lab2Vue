@@ -65,17 +65,6 @@
       "time": "11:00",
       "petsAllowed": false,
       "organizer": "Brody Kill"
-    },
-    {
-      "id": 1004,
-      "category": "community",
-      "title": "Local Art Fair",
-      "description": "Discover local artists and their creations.",
-      "location": "City Gallery",
-      "date": "October 10, 2022",
-      "time": "10:00",
-      "petsAllowed": false,
-      "organizer": "Art Enthusiasts"
     }
   ]
 }
