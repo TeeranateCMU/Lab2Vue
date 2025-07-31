@@ -44,78 +44,38 @@ onMounted(() => {
   <h1>Events For Good</h1>
   <div class="flex flex-col items-center">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
-    <div class="pagination">
-      <RouterLink
-        id="page-prev"
-        :to="{ name: 'event-list-view', query: { page: page - 1, limit: limit } }"
-        rel="prev"
-        v-if="page != 1"
-      >
-        &#60; Prev Page
-      </RouterLink>
+    <div class="pagination flex w-[290px]">
+   <RouterLink
+  id="page-prev"
+ class="flex-1 no-underline text-gray-700 text-left"
+  :to="{ name: 'event-list-view', query: { page: page - 1, limit: limit } }"
+  rel="prev"
+  v-if="page != 1"
+>
+  &#60; Prev Page
+</RouterLink>
 
-      <RouterLink
-        id="page-next"
-        :to="{ name: 'event-list-view', query: { page: page + 1, limit: limit } }"
-        rel="next"
-        v-if="hasNextPage"
-      >
-        Next Page &#62;
-      </RouterLink>
+<RouterLink
+  id="page-next"
+class="flex-1 no-underline text-gray-700 text-right"
+  :to="{ name: 'event-list-view', query: { page: page + 1, limit: limit } }"
+  rel="next"
+  v-if="hasNextPage"
+>
+  Next Page &#62;
+</RouterLink>
     </div>
 
-    <div class="page-size-options">
+    <div class="page-size-options mt-[20px] text-sm text-gray-600">
       Items per page:
-      <RouterLink :to="{ name: 'event-list-view', query: { page: 1, limit: 2 } }" class="size-link"
-        >2</RouterLink
-      >
+      <RouterLink :to="{ name: 'event-list-view', query: { page: 1, limit: 2 } }" class="size-link mx-[5px] no-underline text-green-500 font-bold hover:underline">2</RouterLink>
       |
-      <RouterLink :to="{ name: 'event-list-view', query: { page: 1, limit: 4 } }" class="size-link"
-        >4</RouterLink
-      >
+      <RouterLink :to="{ name: 'event-list-view', query: { page: 1, limit: 4 } }" class="size-link mx-[5px] no-underline text-green-500 font-bold hover:underline">4</RouterLink>
       |
-      <RouterLink :to="{ name: 'event-list-view', query: { page: 1, limit: 6 } }" class="size-link"
-        >6</RouterLink
-      >
+      <RouterLink :to="{ name: 'event-list-view', query: { page: 1, limit: 6 } }" class="size-link mx-[5px] no-underline text-green-500 font-bold hover:underline">6</RouterLink>
     </div>
   </div>
 </template>
 
 <style scoped>
-.pagination {
-  display: flex;
-  width: 290px;
-}
-.pagination a {
-  flex: 1;
-  text-decoration: none;
-  color: #2c3e50;
-}
-
-#page-prev {
-  text-align: left;
-}
-
-#page-next {
-  text-align: right;
-}
-
-.page-size-options {
-  /* + Add styles for page size links */
-  margin-top: 20px;
-  font-size: 0.9em;
-  color: #555;
-}
-
-.size-link {
-  /* + Add styles for individual size links */
-  margin: 0 5px;
-  text-decoration: none;
-  color: #42b983;
-  font-weight: bold;
-}
-
-.size-link:hover {
-  text-decoration: underline;
-}
 </style>

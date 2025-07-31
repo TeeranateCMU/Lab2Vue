@@ -7,13 +7,11 @@ const props = defineProps<{
   event: Event
   id: String
 }>()
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const { event } = toRefs(props)
 const router = useRouter()
 const store = useMessageStore()
 const register = () => {
-  // If the registration API call successful
-  // Push back to the event details view
+
   store.updateMessage('You are successuflly registered for ' + props.event.title)
   setTimeout(() => {
     store.resetMessage()
