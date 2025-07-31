@@ -87,6 +87,7 @@ const router = createRouter({
       name: 'not-found',
       component: NotFoundView,
     },
+    
     {
       path: '/network-error',
       name: 'network-error-view',
@@ -97,8 +98,14 @@ const router = createRouter({
       name: 'student-list-view',
       component: StudentListView,
     },
-  ],
-})
+  ],scrollBehavior(to, from, savedPosition) {
+   if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
+  }
+ })
 router.beforeEach(() => {
   nProgress.start()
 })
