@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // -import { ref } from 'vue' // Remove this line if not used anymore
 import { type Event } from '@/types'
- defineProps<{
-   event: Event
- }>()
+defineProps<{
+  event: Event
+}>()
 </script>
 
 <template>

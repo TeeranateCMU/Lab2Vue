@@ -17,8 +17,8 @@ const router = createRouter({
       component: EventListView,
       props: (route) => ({
         page: parseInt(route.query.page?.toString() || '1'),
-        limit: parseInt(route.query.limit?.toString() || '2') 
-      })
+        limit: parseInt(route.query.limit?.toString() || '2'),
+      }),
     },
     {
       path: '/event/:id',
@@ -30,50 +30,48 @@ const router = createRouter({
           path: '',
           name: 'event-detail-view',
           component: EventDetailView,
-          props: true
+          props: true,
         },
         {
           path: 'register',
           name: 'event-register-view',
           component: EventRegisterView,
-          props: true
+          props: true,
         },
         {
           path: 'edit',
           name: 'event-edit-view',
           component: EventEditView,
-          props: true
-        }
-      ]
+          props: true,
+        },
+      ],
     },
     {
       path: '/about',
       name: 'about',
-      component: AboutView
+      component: AboutView,
     },
     {
       path: '/404/:resource',
       name: '404-resource-view',
       component: NotFoundView,
-      props: true
+      props: true,
     },
     {
       path: '/:catchAll(.*)',
       name: 'not-found',
-      component: NotFoundView
-
-     },
-     {
+      component: NotFoundView,
+    },
+    {
       path: '/network-error',
       name: 'network-error-view',
-      component: NetworkErrorView
-
-   },
+      component: NetworkErrorView,
+    },
     {
       path: '/students',
       name: 'student-list-view',
-      component: StudentListView
-    }
-  ]
+      component: StudentListView,
+    },
+  ],
 })
 export default router
