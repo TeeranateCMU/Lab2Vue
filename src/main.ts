@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import 'nprogress/nprogress.css'
 export interface Event {
   id: number
   category: string
