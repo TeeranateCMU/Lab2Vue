@@ -14,12 +14,11 @@ const store = useMessageStore()
 const register = () => {
   // If the registration API call successful
   // Push back to the event details view
- store.updateMessage('You are successuflly registered for ' + props.event.title)
+  store.updateMessage('You are successuflly registered for ' + props.event.title)
   setTimeout(() => {
-  store.resetMessage()
- }, 3000)
-router.push({ name: 'event-detail-view', params: { id: props.event.id }
-})
+    store.resetMessage()
+  }, 3000)
+  router.push({ name: 'event-detail-view', params: { id: props.event.id } })
 }
 </script>
 <template>

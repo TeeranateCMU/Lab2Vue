@@ -12,8 +12,6 @@ import nProgress from 'nprogress'
 import EventService from '@/services/EventService'
 import { useEventStore } from '@/stores/event'
 
-
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -31,7 +29,7 @@ const router = createRouter({
       name: 'event-layout-view',
       component: EventLayoutView,
       props: true,
-        beforeEnter: (to) => {
+      beforeEnter: (to) => {
         const id = parseInt(to.params.id as string)
         const eventStore = useEventStore()
         return EventService.getEvent(id)
@@ -43,7 +41,7 @@ const router = createRouter({
             if (error.response && error.response.status === 404) {
               return {
                 name: '404-resource-view',
-                params: { resource: 'event' }
+                params: { resource: 'event' },
               }
             } else {
               return { name: 'network-error-view' }
@@ -87,7 +85,7 @@ const router = createRouter({
       name: 'not-found',
       component: NotFoundView,
     },
-    
+
     {
       path: '/network-error',
       name: 'network-error-view',
@@ -98,14 +96,15 @@ const router = createRouter({
       name: 'student-list-view',
       component: StudentListView,
     },
-  ],scrollBehavior(to, from, savedPosition) {
-   if (savedPosition) {
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
       return savedPosition
     } else {
       return { top: 0 }
     }
-  }
- })
+  },
+})
 router.beforeEach(() => {
   nProgress.start()
 })

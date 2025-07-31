@@ -31,7 +31,7 @@ watchEffect(() => {
 // Fetch event details based on the ID prop
 watchEffect(() => {
   if (props.id) {
-   EventService.getEvent(props.id) 
+    EventService.getEvent(props.id)
       .then((response) => {
         event.value = response.data
       })
@@ -40,7 +40,7 @@ watchEffect(() => {
         if (error.response && error.response.status === 404) {
           router.push({
             name: '404-resource',
-            params: { resource: 'event' }
+            params: { resource: 'event' },
           })
         } else {
           router.push({ name: 'network-error' })
@@ -58,7 +58,7 @@ watchEffect(() => {
     <h1>{{ event.title }}</h1>
     <p>{{ event.time }} on {{ event.date }} @ {{ event.location }}</p>
     <p>{{ event.description }}</p>
-    </div>
+  </div>
   <div v-else>
     <p>Loading event details...</p>
   </div>

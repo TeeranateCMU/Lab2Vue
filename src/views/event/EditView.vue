@@ -24,7 +24,7 @@ watchEffect(() => {
         console.error('Error fetching event for edit:', error)
         router.push({
           name: '404-resource',
-          params: { resource: 'event' }
+          params: { resource: 'event' },
         })
       })
   }
@@ -35,13 +35,13 @@ const updateEvent = () => {
   // In a real application, you would typically send updated data to an API here.
   // For this task, we are simulating the update by simply setting a flash message
   // and navigating to demonstrate the functionality.
-  
+
   store.updateMessage('The event data has been updated!') // Set the message in the Pinia store
-  
+
   // Navigate to the event details page using its named route and parameters
-  router.push({ 
+  router.push({
     name: 'event-detail-view', // IMPORTANT: Use the actual route name for your Event Detail View
-    params: { id: props.id } // Pass the current event's ID
+    params: { id: props.id }, // Pass the current event's ID
   })
 }
 </script>
@@ -49,15 +49,17 @@ const updateEvent = () => {
 <template>
   <div v-if="event">
     <h1>Edit {{ event.title }}</h1>
-    
+
     <p>This is where you would edit the event details for: {{ event.title }}</p>
     <p>Category: {{ event.category }}</p>
     <p>Location: {{ event.location }}</p>
-    
+
     <button @click="updateEvent" class="update-button">Update Event</button>
 
-    <p style="margin-top: 20px;">
-      <RouterLink :to="{ name: 'event-detail-view', params: { id: event.id } }">Back to Details</RouterLink>
+    <p style="margin-top: 20px">
+      <RouterLink :to="{ name: 'event-detail-view', params: { id: event.id } }"
+        >Back to Details</RouterLink
+      >
     </p>
   </div>
   <div v-else>
@@ -67,7 +69,7 @@ const updateEvent = () => {
 
 <style scoped>
 .update-button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4caf50; /* Green */
   border: none;
   color: white;
   padding: 10px 20px;
