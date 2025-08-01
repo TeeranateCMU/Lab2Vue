@@ -113,3 +113,4 @@ router.afterEach(() => {
   nProgress.done()
 })
 export default router
+export * from './EventItem'
