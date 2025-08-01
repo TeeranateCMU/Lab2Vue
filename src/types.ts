@@ -27,6 +27,3 @@ export interface MessageState {
 export interface EventState {
   event: Event | null
 }
-// src/types/index.ts
- // This line exports EventItem from EventItem.ts
-// Add other exports for other type files if you have them, e.g., export * from './Event'
