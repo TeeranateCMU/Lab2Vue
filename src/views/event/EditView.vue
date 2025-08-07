@@ -15,7 +15,7 @@ const store = useMessageStore()
 
 watchEffect(() => {
   if (props.id) {
-    EventService.getEvent(props.id)
+    EventService.getEvent(+props.id)
       .then((response) => {
         event.value = response.data
       })
