@@ -79,11 +79,6 @@ const router = createRouter({
       props:true
     },
     {
-    path: '/students',
-    name: 'student-view',
-    component: StudentView,
-    },
-    {
       path: '/:catchAll(.*)',
       name: 'not-found',
       component : NotFoundView
