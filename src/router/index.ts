@@ -27,7 +27,7 @@ const router = createRouter({
     {
       path: '/events/:id',
       name: 'event-layout-view',
-      component: EventLayoutView,a
+      component: EventLayoutView,
       props: true,
       beforeEnter: (to) => {
         const id = parseInt(to.params.id as string);
