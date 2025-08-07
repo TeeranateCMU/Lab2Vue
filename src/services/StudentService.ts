@@ -1,16 +1,16 @@
-import axios from 'axios'
+import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'https://dv-student-backend-2019.appspot.com',
-  withCredentials: false,
+  baseURL: 'https://dv-student-backend-2019.appspot.com/students', 
+  withCredentials: false, 
   headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-  },
-})
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  }
+});
 
 export default {
   getStudents() {
-    return apiClient.get('/students')
-  },
-}
+    return apiClient.get('');
+  }
+};

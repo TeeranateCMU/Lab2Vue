@@ -12,7 +12,7 @@ export interface Event {
 
 export interface Student {
   id: number
-  studentId: string
+  sudentId: string
   name: string
   surname: string
   gpa: number
@@ -25,5 +25,5 @@ export interface MessageState {
   message: string
 }
 export interface EventState {
-  event: Event | null
+  event:Event | null
 }
